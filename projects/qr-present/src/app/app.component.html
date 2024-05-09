@@ -1,11 +1,15 @@
-<div class="container">
-  <form #form="ngForm" (ngSubmit)="onSubmit(form.value)" class="centered-form">
-    <div class="form-group">
-      <label for="inputField">Input Field</label>
-      <input type="text" class="form-control" id="inputField" name="inputField" ngModel>
+<div >
+  <div class="container">
+    <form #form="ngForm" (ngSubmit)="onSubmit(form.value)" class="centered-form">
+      <div class="form-group">
+        <label for="inputField">Input Field</label>
+        <input type="text" class="form-control" id="inputField" name="inputField" ngModel>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <div *ngIf="qrCodeUrl">
+      <img [src]="qrCodeUrl" alt="QR Code">
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
-  <div *ngIf="qrCodeUrl">
-    <img [src]="qrCodeUrl" alt="QR Code">
+  </div>
+  <router-outlet></router-outlet>
 </div>

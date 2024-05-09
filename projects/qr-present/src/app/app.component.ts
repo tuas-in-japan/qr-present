@@ -9,6 +9,8 @@ import * as QRCode from 'qrcode';
 export class AppComponent {
   title = 'qr-present';
   qrCodeUrl: string = '';
+  url: string = '';
+
   onSubmit(value: any) {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
@@ -25,11 +27,12 @@ export class AppComponent {
   }
 
   generateQRCode(data: any) {
-    QRCode.toDataURL(JSON.stringify(data))
-      .then((url: string) => {
-        console.log(url);
-        // You can set this url to an img src to display the QR code
-        this.qrCodeUrl = url;
+    const url = `http://localhost:4200/display-data?input=${data.input}&latitude=${data.latitude}&longitude=${data.longitude}`;
+    QRCode.toDataURL(url)
+      .then((qrCodeUrl: string) => {
+        console.log(qrCodeUrl);
+        // You can set this qrCodeUrl to an img src to display the QR code
+        this.qrCodeUrl = qrCodeUrl;
       })
       .catch((err: Error) => {
         console.error(err);
