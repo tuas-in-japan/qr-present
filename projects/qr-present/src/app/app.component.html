@@ -6,4 +6,6 @@
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
+  <div *ngIf="qrCodeUrl">
+    <img [src]="qrCodeUrl" alt="QR Code">
 </div>
