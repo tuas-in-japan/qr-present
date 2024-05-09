@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding-top: 50px; /* Adjust this value to move the form lower */
+}
+
+.centered-form {
+  width: 50%;
+}

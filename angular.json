@@ -25,6 +25,7 @@
               "projects/qr-present/src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "projects/qr-present/src/styles.css"
             ],
             "scripts": []
