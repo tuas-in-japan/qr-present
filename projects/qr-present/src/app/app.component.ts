@@ -27,7 +27,7 @@ export class AppComponent {
   }
 
   generateQRCode(data: any) {
-    const url = `http://localhost:4200/display-data?input=${data.input}&latitude=${data.latitude}&longitude=${data.longitude}`;
+    const url = `https://23ad-106-154-155-107.ngrok-free.app/display-data?input=${data.input}&latitude=${data.latitude}&longitude=${data.longitude}`;
     QRCode.toDataURL(url)
       .then((qrCodeUrl: string) => {
         console.log(qrCodeUrl);
