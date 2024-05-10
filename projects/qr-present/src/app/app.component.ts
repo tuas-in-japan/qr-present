@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import * as QRCode from 'qrcode';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +11,8 @@ export class AppComponent {
   title = 'qr-present';
   qrCodeUrl: string = '';
   url: string = '';
+
+  constructor(private router: Router) { }
 
   onSubmit(value: any) {
     if (navigator.geolocation) {
@@ -33,6 +36,8 @@ export class AppComponent {
         console.log(qrCodeUrl);
         // You can set this qrCodeUrl to an img src to display the QR code
         this.qrCodeUrl = qrCodeUrl;
+
+        this.router.navigate(['/display-data'], { queryParams: data });
       })
       .catch((err: Error) => {
         console.error(err);
