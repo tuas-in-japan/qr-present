@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import * as QRCode from 'qrcode';
 import { Router } from '@angular/router';
+import { environment } from '../environments/environment';
+
+const ngrokUrl = environment.ngrokUrl;
 
 @Component({
   selector: 'app-root',
@@ -30,7 +33,7 @@ export class AppComponent {
   }
 
   generateQRCode(data: any) {
-    const url = `https://23ad-106-154-155-107.ngrok-free.app/display-data?input=${data.input}&latitude=${data.latitude}&longitude=${data.longitude}`;
+    const url = `${ngrokUrl}/display-data?input=${data.input}&latitude=${data.latitude}&longitude=${data.longitude}`;
     QRCode.toDataURL(url)
       .then((qrCodeUrl: string) => {
         console.log(qrCodeUrl);
