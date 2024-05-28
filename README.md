@@ -1,27 +1,17 @@
-# 
+## Steps to Run the Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.6.
+- Open Command Prompt and type the following command to start ngrok:
+  `ngrok http 4200`
+- Place ngrok url into .env file
+- Start the Angular app with the following command:
+  `ng serve`
+- You are navigated to the display-data view by empty URL in your browser.
 
-## Development server
+### Actions for "Teacher"
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Enter the course name and click "Submit". A QR code will be generated on LAPTOP screen.
 
-## Code scaffolding
+### Actions for "Student"
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Scan the QR code with your SMARTPHONE and follow the link.
+- On your smartphone, you will be taken to the display-data view by `display-data` URL. The position and name of the course will be taken from the QR code (URL parameters).
