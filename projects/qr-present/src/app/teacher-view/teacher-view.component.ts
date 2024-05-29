@@ -20,7 +20,7 @@ export class TeacherViewComponent {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
         const data = {
-          input: value.inputField,
+          courseName: value.courseName,
           latitude: position.coords.latitude,
           longitude: position.coords.longitude
         };
