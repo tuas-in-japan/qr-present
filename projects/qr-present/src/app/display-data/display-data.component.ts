@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-display-data',
-  templateUrl: './display-data.component.html',
-  styleUrls: ['./display-data.component.css']
+    selector: 'app-display-data',
+    templateUrl: './display-data.component.html',
+    styleUrls: ['./display-data.component.css'],
+    standalone: true
 })
 export class DisplayDataComponent implements OnInit {
   input: string = "";

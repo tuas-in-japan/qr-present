@@ -2,13 +2,17 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from '../../environments/environment';
 import * as QRCode from 'qrcode';
+import { NgIf } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 const ngrokUrl = environment.ngrokUrl;
 
 @Component({
-  selector: 'app-teacher-view',
-  templateUrl: './teacher-view.component.html',
-  styleUrls: ['./teacher-view.component.css']
+    selector: 'app-teacher-view',
+    templateUrl: './teacher-view.component.html',
+    styleUrls: ['./teacher-view.component.css'],
+    standalone: true,
+    imports: [FormsModule, NgIf]
 })
 export class TeacherViewComponent {
   constructor(private router: Router) { }
