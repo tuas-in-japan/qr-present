@@ -40,7 +40,7 @@ export class AppComponent {
         // You can set this qrCodeUrl to an img src to display the QR code
         this.qrCodeUrl = qrCodeUrl;
 
-        this.router.navigate(['/display-data'], { queryParams: data });
+        this.router.navigate(['/student-view'], { queryParams: data });
       })
       .catch((err: Error) => {
         console.error(err);
