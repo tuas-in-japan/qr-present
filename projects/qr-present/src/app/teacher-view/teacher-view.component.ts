@@ -23,6 +23,7 @@ export class TeacherViewComponent {
   onSubmit(value: any) {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
+        console.log(value)
         const data = {
           courseName: value.courseName,
           latitude: position.coords.latitude,
@@ -36,10 +37,10 @@ export class TeacherViewComponent {
   }
 
   generateQRCode(data: any) {
-    const url = `${ngrokUrl}/student-view?input=${data.input}&latitude=${data.latitude}&longitude=${data.longitude}`;
+    const url = `${ngrokUrl}/student-view?courseName=${data.courseName}&latitude=${data.latitude}&longitude=${data.longitude}`;
     QRCode.toDataURL(url)
       .then((qrCodeUrl: string) => {
-        console.log(qrCodeUrl);
+
         // You can set this qrCodeUrl to an img src to display the QR code
         this.qrCodeUrl = qrCodeUrl;
 

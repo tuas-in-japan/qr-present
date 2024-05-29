@@ -1,16 +1,17 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { NgIf } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
     selector: 'app-student-view',
     templateUrl: './student-view.component.html',
     styleUrls: ['./student-view.component.css'],
     standalone: true,
-    imports: [NgIf, RouterModule]
+    imports: [NgIf, RouterModule, FormsModule]
 })
 export class StudentViewComponent {
-  input: string = "";
+  courseName: string = "";
   latitude: number = 0;
   longitude: number = 0;
 
@@ -18,7 +19,7 @@ export class StudentViewComponent {
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
-      this.input = params['input'];
+      this.courseName = params['courseName'];
       this.latitude = Number(params['latitude']);
       this.longitude = Number(params['longitude']);
     });
