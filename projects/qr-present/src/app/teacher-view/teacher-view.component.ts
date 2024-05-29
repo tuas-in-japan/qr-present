@@ -15,7 +15,6 @@ const ngrokUrl = environment.ngrokUrl;
     imports: [FormsModule, NgIf]
 })
 export class TeacherViewComponent {
-  constructor(private router: Router) { }
 
   qrCodeUrl: string = '';
   url: string = '';
