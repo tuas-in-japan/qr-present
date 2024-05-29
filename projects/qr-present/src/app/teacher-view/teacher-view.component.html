@@ -1,0 +1,10 @@
+<form #form="ngForm" (ngSubmit)="onSubmit(form.value)">
+  <div class="form-group">
+    <label for="inputField">Enter Course Name</label>
+    <input type="text" class="form-control" id="inputField" name="inputField" ngModel>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+<div *ngIf="qrCodeUrl">
+  <img [src]="qrCodeUrl" alt="QR Code">
+</div>
