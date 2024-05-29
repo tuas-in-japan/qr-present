@@ -1,5 +1,12 @@
 <div *ngIf="input && latitude && longitude">
   <p>Course Name: {{ input }}</p>
-  <p>Latitude: {{ latitude }}</p>
-  <p>Longitude: {{ longitude }}</p>
+  <!-- <p>Latitude: {{ latitude }}</p>
+  <p>Longitude: {{ longitude }}</p> -->
+  <form #form="ngForm" (ngSubmit)="onRegister(form.value)">
+    <div class="form-group">
+      <label for="studentName">Enter Your Name</label>
+      <input type="text" class="form-control" id="studentName" name="studentName" ngModel>
+      <button type="submit" class="btn btn-primary">Register me!</button>
+    </div>
+  </form>
 </div>
