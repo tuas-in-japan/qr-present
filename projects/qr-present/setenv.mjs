@@ -4,9 +4,12 @@ import { config } from 'dotenv';
 // if .env file is not in the root directory the path should be determined
 config({ path: './projects/qr-present/.env' });
 
+const firebaseConfig = process.env['FIREBASE_CONFIG'];
+
 const environment = `export const environment = {
   production: false,
-  ngrokUrl: '${process.env['NGROK_URL']}'
+  ngrokUrl: '${process.env['NGROK_URL']}',
+  firebase: ${firebaseConfig}
 };
 `;
 

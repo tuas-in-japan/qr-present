@@ -3,17 +3,28 @@ import { ActivatedRoute, RouterModule } from '@angular/router';
 import { NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
+// import { getFirestore, collection, addDoc } from "@angular/fire/firestore";
+// import { initializeApp } from "firebase/app";
+// import { environment } from '../../environments/environment';
+
+
 @Component({
-    selector: 'app-student-view',
-    templateUrl: './student-view.component.html',
-    styleUrls: ['./student-view.component.css'],
-    standalone: true,
-    imports: [NgIf, RouterModule, FormsModule]
+  selector: 'app-student-view',
+  templateUrl: './student-view.component.html',
+  styleUrls: ['./student-view.component.css'],
+  standalone: true,
+  imports: [
+    NgIf,
+    RouterModule,
+    FormsModule
+  ]
 })
 export class StudentViewComponent {
   courseName: string = "";
   latitude: number = 0;
   longitude: number = 0;
+  // fireBaseApp = initializeApp(environment.firebase);
+  // db = getFirestore(this.fireBaseApp);
 
   constructor(private route: ActivatedRoute) { }
 
@@ -27,7 +38,7 @@ export class StudentViewComponent {
 
   onRegister(value: any) {
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition((position) => {
+      navigator.geolocation.getCurrentPosition(async (position) => {
         const studentPosition = {
           latitude: position.coords.latitude,
           longitude: position.coords.longitude
@@ -36,6 +47,15 @@ export class StudentViewComponent {
         };
         const distanceInMeters = this.getDistanceFromLatLonInM(this.latitude, this.longitude, studentPosition.latitude, studentPosition.longitude);
         if (distanceInMeters <= 100) {
+
+          // const user = { name: value.studentName, position: studentPosition };
+          // try {
+          //   const docRef = await addDoc(collection(this.db, "courses", this.courseName, "users"), user);
+          //   console.log(`User added with ID: ${docRef.id}`);
+          // } catch (e) {
+          //   console.error("Error adding user: ", e);
+          // }
+
           // The positions are within 100 meters of each other
           alert(`${value.studentName} have successfully registered!`);
         }

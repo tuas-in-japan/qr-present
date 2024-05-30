@@ -2,6 +2,7 @@
 
 - Open Command Prompt and type the following command to start ngrok:
   `ngrok http 4200`
+  - in case of trouble `npm install -g ngrok` "Käyttö estetty" go to WithSecure -> Deep Guard and click "allow ngrok.exe"
 - Place ngrok url into .env file
 - Start the Angular app with the following command:
   `ng serve`
